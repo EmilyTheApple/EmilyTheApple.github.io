@@ -6,7 +6,8 @@ text += links.forEach(makeList);
 text += "</li>";
 
 function makeList(link) {
-    text += "<a href='" + link + "'>Weekly Code</a>";
+    text += "<a href='"+link+"'>Weekly Code</a>";
+    return text;
 }
 
 document.getElementById("classLinks").innerhtml = text;
