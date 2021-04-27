@@ -1,8 +1,7 @@
 const links, text;
-links = [{
-    label: "Week1 notes",
-    url: "week1/index.html"
-  }];
+links = [
+  {label: "Week1 notes", url: "week1/index.html" }, 
+  {label: "Week2 notes", url: "week2/index.html"}];
 
 text = "<li>";
 text += links.forEach(makeList);
