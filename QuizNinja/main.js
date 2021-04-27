@@ -1,4 +1,5 @@
 alert('Welcome to Quiz Ninja!');
+const question = "What is Superman's real name?"
 alert(`You answered ${answer}`);
 const quiz = [
     ["What is Superman's real name?","Clark Kent"],
