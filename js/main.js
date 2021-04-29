@@ -1,13 +1,11 @@
-const links, text;
-links = [
-  {label: "Week1 notes", url: "week1/index.html" }, 
+const links = [ 
+    {label: "Week1 notes", url: "week1/index.html" }, 
   {label: "Week2 notes", url: "week2/index.html"}];
 
 text = "<li>";
-text += links.forEach(makeList);
+text += links.forEach( links => text+=`<a href="${links.index.url}" label="${links.index.label}"`)
 text += "</li>";
-
-function makeList(link) {
+{
     text += "<a href='"+link+"'>Weekly Code</a>";
     return text;
 }
