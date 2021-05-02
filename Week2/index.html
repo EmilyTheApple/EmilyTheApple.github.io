@@ -12,20 +12,20 @@
     <main>
         <h1>Week 2 Team Activity</h1>
         <label for="textbox">The sum of all numbers leading up to and including the number you input</label><br>
-        <input type="text" id="textbox" name="textbox">
+        <input type="number" id="textbox" name="textbox">
         <button type="button" id="sbtbutton" onclick="writeContent()">Click Here</button>
         <div id="contents"></div>
         
         <label for="textbox1">Calculate</label><br>
         <input type="text" id="textbox1" name="textbox1">
         <input type="text" id="textbox2" name="textbox2">
-        <button type="button" id="sum" onclick="">Add</button>
-        <button type="button" id="sub" onclick="">Subtract</button>
-        <button type="button" id="mult" onclick="">Multiply</button>
-        <button type="button" id="divide" onclick="">Divide</button>  
+        <button type="button" id="sum" onclick="add()">Add</button>
+        <button type="button" id="sub" onclick="sub()">Subtract</button>
+        <button type="button" id="mult" onclick="mult()">Multiply</button>
+        <button type="button" id="divide" onclick="divide()">Divide</button>  
         <div id="answer"></div>
     </main>
-    <script src="/js/main.js"></script>
+    <script src="/main.js"></script>
 </body>
 
 </html>

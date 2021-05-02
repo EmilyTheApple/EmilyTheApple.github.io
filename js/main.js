@@ -1,5 +1,6 @@
 const links = ['/Week1/index.html', '/Week2/index.html', '/Week3/index.html'];
 const ol = document.getElementById('classLinks');
+const i = 0;
 const output = () => {
     for (var i = 0; i < links.length; i++) {
     const list = '<li><a href="';
