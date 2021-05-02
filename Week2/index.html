@@ -1,20 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="utf-8">
-  <title>Emily Patrick: Week 2</title>
-  <meta name="description" content="Emily's week 2 index for WDD 330">
-  <meta name="author" content="Emily Patrick">
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset='utf-8'>
+    <meta name='description' content=''>
+    <title>Week 2 Team Activity: Calculating Function</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<main>
-  <h1>WDD 330: Week 2</h1>
-  <h2>Activities</h2>
-</main>
-<script src="main.js"></script>
+    <main>
+        <h1>Week 2 Team Activity</h1>
+        <label for="textbox">The sum of all numbers leading up to and including the number you input</label><br>
+        <input type="text" id="textbox" name="textbox">
+        <button type="button" id="sbtbutton" onclick="writeContent()">Click Here</button>
+        <div id="contents"></div>
+        
+        <label for="textbox1">Calculate</label><br>
+        <input type="text" id="textbox1" name="textbox1">
+        <input type="text" id="textbox2" name="textbox2">
+        <button type="button" id="sum" onclick="">Add</button>
+        <button type="button" id="sub" onclick="">Subtract</button>
+        <button type="button" id="mult" onclick="">Multiply</button>
+        <button type="button" id="divide" onclick="">Divide</button>  
+        <div id="answer"></div>
+    </main>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
