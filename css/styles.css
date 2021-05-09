@@ -1,10 +1,42 @@
+body {
+    margin: 0;
+    color: #5c5346;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8c6057;
+}
+
+header h1, header h2 {
+    color: #f0f2ef;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 30px 10px;
+}
+
+nav {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #f0f2ef;
+}
+
 main {
     width: 80%;
     margin: auto;
-}
-
-h1 {
-    margin-top: 4rem;
 }
 
 div {
