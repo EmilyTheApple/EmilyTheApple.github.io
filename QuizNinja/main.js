@@ -1,3 +1,4 @@
+'use strict'
 const quiz = [
     { name: "Superman",realName: "Clark Kent" },
     { name: "Wonder Woman",realName: "Diana Prince" },
@@ -10,6 +11,7 @@ const view = {
     info: document.getElementById('info'), 
     start: document.getElementById('start'),
     response: document.querySelector('#response'),
+    timer: document.querySelector('#timer strong'),
     show(element){
         element.style.display = 'block';
     },
@@ -45,13 +47,17 @@ const view = {
 };
 const game = {
     start(quiz){
+        console.log('start() invoked');
         this.questions = [...quiz];
         this.score = 0;
+        this.secondsRemaining = 20;
+        this.timer = setInterval(this.countdown, 1000);
         view.setup();
         this.ask();
     },
     ask(name){
         if(this.questions.length > 0) {
+            console.log('ask() invoked');
             this.question = this.questions.pop();
             const question = `What is ${this.question.name}'s real name?`;
             view.render(view.question,question);
@@ -60,6 +66,7 @@ const game = {
         }
     },
     check(event){
+        console.log('check(event) invoked');
         event.preventDefault();
         const response = view.response.answer.value;
         const answer = this.question.realName;
@@ -73,9 +80,18 @@ const game = {
         view.resetForm();
         this.ask();
     },
+    countdown() {
+        game.secondsRemaining--;
+        view.render(view.timer, game.secondsRemaining);
+        if(game.secondsRemaining < 0) {
+            game.gameOver();
+        }
+    },
     gameOver(){
+        console.log('gameOver() invoked');
         view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
         view.teardown();
+        clearInterval(this.timer);
     }
 }
 game.start(quiz);
