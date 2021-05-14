@@ -1,56 +1,141 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset = "utf-8">
-        <title>Week 3</title>
-        <link rel="stylesheet" href="small.css">
 
+<head>
+  <meta charset="utf-8">
+  <title>Week 3</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
 
-    </head>
-    <body>
+<body>
+  <header>
+    <h1>Emily Patrick</h1>
+    <h2>WDD 330</h2>
+    <nav>
+      <ul>
+        <li>
+          <a href="/index.html" title="Home">Home</a>
+        </li>
+        <li>
+          <a href="/QuizNinja/index.html" title="Quiz Ninja Projct">Quiz Ninja</a>
+        </li>
+        <li>
+          <a href="week1.html" title="week 1 notes">Week 1</a>
+        </li>
+        <li>
+          <a href="week2.html" title="week 2 notes">Week 2</a>
+        </li>
+        <li>
+          <a href="week3.html" title="week 3 notes">Week 3</a>
+        </li>
+        <li>
+          <a href="week4.html" title="week 4 notes">Week 4</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
 
-<h1>Week 3 Team Activity</h1>
-<p>1. These inventors were born in the 1500's.</p>
-<span id="oldPeople"></span>
+  <h1>Week 3 Team Activity</h1>
+  <p>1. These inventors were born in the 1500's.</p>
+  <span id="oldPeople"></span>
 
-<p>2. The inventors first and last names.</p>
-<span id="inventorNames"></span>
+  <p>2. The inventors first and last names.</p>
+  <span id="inventorNames"></span>
 
-<p>3. The inventors from oldest to youngest.</p>
-<span id="happyBirthday"></span>
+  <p>3. The inventors from oldest to youngest.</p>
+  <span id="happyBirthday"></span>
 
-<p>4. The number of years each inventor lived.</p>
-<span id="totalAge"></span> <br>
-<span id="ageMatters"></span>
+  <p>4. The number of years each inventor lived.</p>
+  <span id="totalAge"></span> <br>
+  <span id="ageMatters"></span>
 
-<p>5. The inventors sorted by years lived.</p>
-<span id="longLive"></span>
+  <p>5. The inventors sorted by years lived.</p>
+  <span id="longLive"></span>
 
-<h2>Stretch Goals</h2>
+  <h2>Stretch Goals</h2>
 
-<p>7. Sort the names alphabetically by last name</p>
-<p>Aren't they already sorted alphabetically?</p>
-<span id="alphaPeople"></span>
-<p>8. Remove all the duplicates</p>
-<span id="removeDuplicates"></span>
+  <p>7. Sort the names alphabetically by last name</p>
+  <p>Aren't they already sorted alphabetically?</p>
+  <span id="alphaPeople"></span>
+  <p>8. Remove all the duplicates</p>
+  <span id="removeDuplicates"></span>
 
-<script>
-
-  const inventors = [
-      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+  <script>
+    const inventors = [{
+        first: 'Albert',
+        last: 'Einstein',
+        year: 1879,
+        passed: 1955
+      },
+      {
+        first: 'Isaac',
+        last: 'Newton',
+        year: 1643,
+        passed: 1727
+      },
+      {
+        first: 'Galileo',
+        last: 'Galilei',
+        year: 1564,
+        passed: 1642
+      },
+      {
+        first: 'Marie',
+        last: 'Curie',
+        year: 1867,
+        passed: 1934
+      },
+      {
+        first: 'Johannes',
+        last: 'Kepler',
+        year: 1571,
+        passed: 1630
+      },
+      {
+        first: 'Nicolaus',
+        last: 'Copernicus',
+        year: 1473,
+        passed: 1543
+      },
+      {
+        first: 'Max',
+        last: 'Planck',
+        year: 1858,
+        passed: 1947
+      },
+      {
+        first: 'Katherine',
+        last: 'Blodgett',
+        year: 1898,
+        passed: 1979
+      },
+      {
+        first: 'Ada',
+        last: 'Lovelace',
+        year: 1815,
+        passed: 1852
+      },
+      {
+        first: 'Sarah E.',
+        last: 'Goode',
+        year: 1855,
+        passed: 1905
+      },
+      {
+        first: 'Lise',
+        last: 'Meitner',
+        year: 1878,
+        passed: 1968
+      },
+      {
+        first: 'Hanna',
+        last: 'Hammarström',
+        year: 1829,
+        passed: 1909
+      }
     ];
-  
+
     const people = [
       'Beck, Glenn',
       'Becker, Carl',
@@ -94,45 +179,45 @@
       'Blair, Tony',
       'Blake, William'
     ];
-  
+
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     const elderly = inventors.filter(old => old.year < 1600);
     //console.log(elderly);
-    for (i=0; i < elderly.length; i++){
+    for (i = 0; i < elderly.length; i++) {
       document.getElementById("oldPeople").innerHTML += elderly[i].first + " " + elderly[i].last + "<br>";
     }
-   
-  
+
+
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
     const names = inventors.map(inventor => inventor.first + " " + inventor.last);
     //console.log(names);
-    for (i=0; i < names.length; i++){
+    for (i = 0; i < names.length; i++) {
       document.getElementById("inventorNames").innerHTML += names[i] + "<br>";
     }
-  
+
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
     function compare(a, b) {
       const yearA = a.year;
       const yearB = b.year;
-      
+
       let comp = 0;
       if (yearA > yearB) {
         comp = 1;
-      }
-      else if(yearA < yearB) {
+      } else if (yearA < yearB) {
         comp = -1;
       }
       return comp;
     }
     inventors.sort(compare);
     //console.log(inventors);
-    for (i=0; i < inventors.length; i++){
-      document.getElementById("happyBirthday").innerHTML += inventors[i].first + " " + inventors[i].last + " " + inventors[i].year + "<br>";
+    for (i = 0; i < inventors.length; i++) {
+      document.getElementById("happyBirthday").innerHTML += inventors[i].first + " " + inventors[i].last + " " +
+        inventors[i].year + "<br>";
     }
-  
+
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
     //isolate the passed value and year value using .map.
@@ -157,14 +242,14 @@
     // console.log(yearBorn);
     const findAge = (yearDied, yearBorn) => {
       const age = [];
-      for(let i=0; i < yearDied.length; i++) {
+      for (let i = 0; i < yearDied.length; i++) {
         const subtract = yearDied[i] - yearBorn[i];
         age[i] = " " + subtract;
       }
       return age;
     };
     // console.log(findAge(yearDied, yearBorn));
-    document.getElementById("ageMatters").innerHTML = "Or" + findAge(yearDied, yearBorn); 
+    document.getElementById("ageMatters").innerHTML = "Or" + findAge(yearDied, yearBorn);
 
     // 5. Sort the inventors by years lived
     //create a variable to shorten the function name
@@ -172,9 +257,9 @@
     //console.log(youngOld[0]);
     //console.log(names[0]);
     //create a loop to print each part of each array. I'm using the function where I mapped the names and the funtion where I reduced the ages.
-    for (i = 0; i < youngOld.length; i++){
+    for (i = 0; i < youngOld.length; i++) {
       document.getElementById("longLive").innerHTML += names[i] + youngOld[i] + "<br>";
-    } 
+    }
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
     // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
@@ -186,9 +271,9 @@
     const alphaP = people.sort();
     console.log(alphaP);
     for (i = 0; i < alphaP.length; i++) {
-    document.getElementById("alphaPeople").innerHTML += alphaP[i] + "<br>";
+      document.getElementById("alphaPeople").innerHTML += alphaP[i] + "<br>";
     };
-  
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = [
@@ -209,18 +294,18 @@
     ];
 
     let myOrderedArray = data.reduce(function (accumulator, currentValue) {
-  if (accumulator.indexOf(currentValue) === -1) {
-    accumulator.push(currentValue)
-  }
-  return accumulator
-}, [])
+      if (accumulator.indexOf(currentValue) === -1) {
+        accumulator.push(currentValue)
+      }
+      return accumulator
+    }, [])
 
-console.log(myOrderedArray);
-for(i = 0; i < myOrderedArray.length; i++) {
-  document.getElementById("removeDuplicates").innerHTML += myOrderedArray[i] + "<br>";
-}
-  
-          </script>
+    console.log(myOrderedArray);
+    for (i = 0; i < myOrderedArray.length; i++) {
+      document.getElementById("removeDuplicates").innerHTML += myOrderedArray[i] + "<br>";
+    }
+  </script>
+</main>
+</body>
 
-    </body>
-    </html>
+</html>
