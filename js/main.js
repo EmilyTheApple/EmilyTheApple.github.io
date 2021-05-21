@@ -3,7 +3,11 @@ const links = [
     { label: 'Week 1 Notes', url: 'week1.html', }, // you can add other tags if you like 
     { label: 'Week 2 Notes', url: 'week2.html', },
     { label: 'Week 3 Notes', url: 'week3.html', }, 
-    { label: 'Week 4 Notes', url: 'week4.html', }
+    { label: 'Week 3 Team Activity', url: 'w03-teamActivity.html', },
+    { label: 'Week 4 Notes', url: 'week4.html', },
+    { label: 'Week 4 Team Activity', url: 'w04-teamActivity.html', },
+    { label: 'Week 5 Notes', url: 'week5.html', },
+    { label: 'Week 5 Team Activity', url: 'w05-teamActivity.html', },
   ]; 
   
   const ol = document.getElementById('assignments');      // whatever your OL tag ID is 

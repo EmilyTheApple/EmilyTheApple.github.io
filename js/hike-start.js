@@ -61,5 +61,5 @@ function renderOneHike(hike) {
 }
 
 window.addEventListener("load", () => {
-    showHikeList();
+    hikeList.showHikeList();
 });

@@ -22,7 +22,7 @@ header h1, header h2 {
 
 header h1 {
     display: inline-block;
-    margin: 30px 10px;
+    margin: 30px 10px 30px 190px;
 }
 
 a {
