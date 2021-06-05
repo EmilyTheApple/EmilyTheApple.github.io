@@ -34,6 +34,14 @@ const links = [{
     label: 'Week 6 Notes',
     url: 'week6.html',
   },
+  {
+    label: 'Week 7 Notes',
+    url: 'week7.html',
+  },
+  {
+    label: 'Week 7 Team Activity',
+    url: 'hiking-complete.html',
+  },
 ];
 
 const ol = document.getElementById('assignments'); // whatever your OL tag ID is 
