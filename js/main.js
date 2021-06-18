@@ -50,6 +50,10 @@ const links = [{
     label: 'Week 8 Team Activity',
     url: 'w08-teamActivity.html',
   },
+  {
+    label: 'Week 9 Notes',
+    url: 'week9.html',
+  },
 ];
 
 const ol = document.getElementById('assignments'); // whatever your OL tag ID is 

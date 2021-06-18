@@ -26,33 +26,34 @@ function fetchPeople(url = nextURL) {
 function displayPeople(peopleList) {
     document.getElementById("descriptionDiv").innerHTML = "";
     document.getElementById("descriptionDiv").classList = 'people';
-    for (let person of peopleList) {
-        const personDisplayElement = document.createElement("dl");
+    for (const i in peopleList)
+    {
+        const person = peopleList[i];
+        const personDisplayElement = document.createElement("p");
+        personDisplayElement.innerHTML = person["name"];
+        document.getElementById("descriptionDiv").appendChild(personDisplayElement);
+
         personDisplayElement.addEventListener('click', () => {
             // Display modal with data from person
-            // Here is your code section...
-            alert('Persons Name: ' + person['name'] +
-                "\n" + person['name'] + "'s Height: " +
-                person['height']);
+            document.getElementById("showModal").style.display = "block";
+            document.getElementById("modalDetails").innerHTML = person['name'] +
+                "\n" + "<br>"
+                 + "Height: " + person['height'] + "<br>"
+                 + "Mass: " + person['mass'] + '<br>'
+                 + "Hair color: " + person['hair_color'] + '<br>'
+                 + "Skin tone: " + person['skin_color'] + '<br>'
+                 + "Eye color: " + person['eye_color'];
+                 //Close the modal when the X is clicked
+                 document.getElementsByClassName("close")[0].onclick = function () {
+                     document.getElementById("showModal").style.display = "none";
+
+                     
+                 }
         });
+
         personDisplayElement.classList.add('pagination');
         personDisplayElement.classList.add('person');
-        elements = [
-            ['Name', "name"],
-            ['Height', 'height'],
-            ['Mass', 'mass'],
-            ['Hair', 'hair_color'],
-            ['Skin', 'skin_color'],
-            ['Eye', 'eye_color']
-        ];
-        for (element of elements) {
-            const dtElement = document.createElement('dt');
-            dtElement.textContent = element[0];
-            const ddElement = document.createElement('dd');
-            ddElement.textContent = person[element[1]];
-            personDisplayElement.appendChild(dtElement);
-            personDisplayElement.appendChild(ddElement);
-        }
+        
         // personDisplayElement.innerHTML = "<dt>Name</dt><dd>" + person["name"] + "</dd>"
         // personDisplayElement.innerHTML += "<dt>Height</dt><dd>" + person["height"] + "</dd>";
         // personDisplayElement.innerHTML += "<dt>Mass</dt><dd>" + person["mass"] + "</dd>";
