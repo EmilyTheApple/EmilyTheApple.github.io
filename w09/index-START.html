@@ -58,9 +58,10 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  document.querySelectorAll('[data-key="65"]').addEventListener('click', play)
-  function play() {
-    
+  document.querySelectorAll('[data-key="65"]').addEventListener('click', play(event))
+  function play(event) {
+    let note = event.target
+    console.dir(event)
   }
 
 </script>
