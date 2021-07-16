@@ -108,7 +108,7 @@ saveButton.addEventListener('click', (event) => {
     event.preventDefault()
     let charName = document.getElementById('charName')
     localStorage.setItem(charName.value, JSON.stringify(keepCharacter))
-    window.location.href = '/charList.html'
+    window.location.href = '/Final/charList.html'
 })
 
 function getCharList() {   
