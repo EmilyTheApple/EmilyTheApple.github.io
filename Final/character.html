@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Characteropedia: Character</title>
+</head>
+
+<body onload="rollCharCall()">
+    <header>
+        <h1>Characteropedia</h1>
+    </header>
+    <main>
+        <h2>Your New Character:</h2>
+        <div id="character"></div>
+        <button onclick="save()">Save</button>
+        <button onclick="reload()">Reroll</button>
+        <form id="saveChar">
+            <label for="charName">Name Your Character</label>
+            <input id="charName" type="text" name="charName">
+            <button id="saveBtn" type="submit">Save</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy Emily Patrick | 2021</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
