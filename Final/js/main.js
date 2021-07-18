@@ -117,22 +117,54 @@ function getCharList() {
         console.log(localStorage.getItem(key));
 
         let keyObject = JSON.parse(localStorage.getItem(key))
-        display.innerHTML += `<div class="charList" id="char${key}"><p>Character Name: <span>${key}</span></p><p>Race: <span>${keyObject.race}</span></p><p>Class: <span>${keyObject.classs}</span></p></div>`
-
-        let event = document.getElementById(`char${key}`)
-        console.log(`char${key}`)
-        // event.addEventListener('click', (event) => {
-        //     window.location.href = '/charDetail.html'
-        //     let details = document.getElementById('charDetails')
-        //     details += `<h2>Race:</h2><p id="race" class="character">keyObject${race}</p>
-        //     <h2>Class:</h2><p id="class" class="character">keyObject${classs}</p>
-        //     <h2>Background:</h2><p id="background" class="character">keyObject${background}</p>
-        //     <h2>Skill:</h2><p id="skill" class="character">keyObject${skills}</p>
-        //     <h2>Weapon:</h2><p id="weapon" class="character">keyObject${weapon}</p>
-        //     <h2>Feature:</h2><p id="feature" class="character">keyObject${feature}</p>
-        //     <h2>Proficiency:</h2><p id="proficiency" class="character">keyObject${proficiency}</p>
-        //     <h2>Language:</h2><p id="language" class="character">keyObject${language}</p>
-        //     <h2>Alignment:</h2><p id="alignment" class="character">keyObject${alignment}</p>`
-        // })
+        display.innerHTML += `<a href="/Final/charDetail.html?char=char${key}"><div class="charList" id="char${key}"><p>Character Name: <span>${key}</span></p><p>Race: <span>${keyObject.race}</span></p><p>Class: <span>${keyObject.classs}</span></p></div></a>`
      });
+}
+
+function getCharDetails() {
+    let url = new URL(window.location.href)
+    console.log(url)
+    let params = new URLSearchParams(url.search)
+    const charName = params.get('char')
+    console.log(charName)
+    const charKey = charName.split("char")
+    console.log(charKey[1])
+    let display = document.getElementById('charDetails')
+    let keyObject = JSON.parse(localStorage.getItem(charKey[1]))
+    console.log(keyObject)
+    let Name = document.getElementById('Name')
+    Name.innerHTML = `${charKey[1]}`
+    display.innerHTML = `<h2>Race:</h2><p id="race" class="character">${keyObject.race}</p>
+    <h2>Class:</h2><p id="class" class="character">${keyObject.classs}</p>
+    <h2>Background:</h2><p id="background" class="character">${keyObject.background}</p>
+    <h2>Skill:</h2><p id="skill" class="character">${keyObject.skills}</p>
+    <h2>Weapon:</h2><p id="weapon" class="character">${keyObject.weapon}</p>
+    <h2>Feature:</h2><p id="feature" class="character">${keyObject.feature}</p>
+    <h2>Proficiency:</h2><p id="proficiency" class="character">${keyObject.proficiency}</p>
+    <h2>Language:</h2><p id="language" class="character">${keyObject.language}</p>
+    <h2>Alignment:</h2><p id="alignment" class="character">${keyObject.alignment}</p>`
+}
+
+function editChar() {
+    let url = new URL(window.location.href)
+    console.log(url)
+    let params = new URLSearchParams(url.search)
+    const charName = params.get('char')
+    console.log(charName)
+    const charKey = charName.split("char")
+    console.log(charKey[1])
+    let display = document.getElementById('charDetails')
+    let keyObject = JSON.parse(localStorage.getItem(charKey[1]))
+    console.log(keyObject)
+    display.innerHTML = `<form class="editForm"><fieldset>
+    <label for="race">Race</label><input type="text" name="race" id="race" value="${keyObject.race}">
+    <label for="classs">Class</label><input type="text" name="classs" id="classs" value="${keyObject.classs}">
+    <label for="background">Background</label><input type="text" name="background" id="background" value="${keyObject.background}">
+    <label for="skill">Skill</label><input type="text" name="skill" id="skill" value="${keyObject.skill}">
+    <label for="weapon">Weapon</label><input type="text" name="weapon" id="weapon" value="${keyObject.weapon}">
+    <label for="feature">Feature</label><input type="text" name="feature" id="feature" value="${keyObject.feature}">
+    <label for="proficiency">Proficiency</label><input type="text" name="proficiency" id="proficiency" value="${keyObject.proficiency}">
+    <label for="language">Language</label><input type="text" name="langauge" id="language" value="${keyObject.language}">
+    <label for="alignment">Alignment</label><input type="text" name="alignment" id="alignment" value="${keyObject.alignment}">
+    </fieldset></form>`
 }
