@@ -47,6 +47,10 @@ footer {
     color: #D9D0DC;
 }
 
+.hide {
+    display: none;
+}
+
 #character, #charDetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -122,3 +126,50 @@ a {
     font-style: italic;
 }
 
+.goback {
+    position: absolute;
+    bottom: 7%;
+    background-color: #56667a;
+    color: #CED1DF;
+    width: 150px;
+    text-align: center;
+    height: 22px;
+}
+
+.goback:hover {
+    background-color: #5f4b66;
+}
+
+@media only screen and (min-width: 650px) {
+    .mainList {
+        width: 300px;
+        margin: 10px auto;
+    }
+
+    .charList {
+        width: 500px;
+        margin: 10px auto;
+    }
+
+    #charDetails {
+        width: 60vw;
+        margin: auto;
+    }
+
+    label {
+        text-align: left;
+    }
+
+    .buttonDiv {
+        text-align: center;
+    }
+
+    .goback {
+        right: 40vw;
+    }
+
+    .editForm fieldset {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+}

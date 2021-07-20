@@ -157,6 +157,7 @@ function editChar() {
     let keyObject = JSON.parse(localStorage.getItem(charKey[1]))
     console.log(keyObject)
     display.innerHTML = `<form class="editForm"><fieldset>
+    <label for="name">Name</label><input type="text" name="name" id="name" value="${charKey[1]}">
     <label for="race">Race</label><input type="text" name="race" id="race" value="${keyObject.race}">
     <label for="classs">Class</label><input type="text" name="classs" id="classs" value="${keyObject.classs}">
     <label for="background">Background</label><input type="text" name="background" id="background" value="${keyObject.background}">
@@ -167,4 +168,57 @@ function editChar() {
     <label for="language">Language</label><input type="text" name="langauge" id="language" value="${keyObject.language}">
     <label for="alignment">Alignment</label><input type="text" name="alignment" id="alignment" value="${keyObject.alignment}">
     </fieldset></form>`
+    const save = document.querySelector('.hide')
+    save.style.display = 'inline-block'
+    const deleteChar = document.getElementById('delete')
+    deleteChar.style.display = 'none'
+}
+
+function saveEdit() {
+    let name = document.getElementById('name').value
+    const race = document.getElementById('race').value
+    const classs = document.getElementById('classs').value
+    const background = document.getElementById('background').value
+    const skill = document.getElementById('skill').value
+    const weapon = document.getElementById('weapon').value
+    const feature = document.getElementById('feature').value
+    const proficiency = document.getElementById('proficiency').value
+    const language = document.getElementById('language').value
+    const alignment = document.getElementById('alignment').value
+    keepCharacter.race = `${race}`
+    keepCharacter.classs = `${classs}`
+    keepCharacter.background = `${background}`
+    keepCharacter.skill = `${skill}`
+    keepCharacter.weapon = `${weapon}`
+    keepCharacter.feature = `${feature}`
+    keepCharacter.proficiency = `${proficiency}`
+    keepCharacter.language = `${language}`
+    keepCharacter.alignment = `${alignment}`
+    let url = new URL(window.location.href)
+    let params = new URLSearchParams(url.search)
+    const charName = params.get('char')
+    const charKey = charName.split("char")
+    const character = localStorage[`${charKey[1]}`]
+    console.log(`${charKey[1]}`)
+    console.log(`${character}`)
+    if (name === charKey[1]) {
+        localStorage.setItem(name, JSON.stringify(keepCharacter))
+        window.location.href = '/Final/charList.html'
+    } else {
+        localStorage.setItem(name, JSON.stringify(keepCharacter))
+        localStorage.removeItem(charKey[1])
+        window.location.href = '/Final/charList.html'
+    }
+}
+
+function deleteChar() {
+    let url = new URL(window.location.href)
+    let params = new URLSearchParams(url.search)
+    const charName = params.get('char')
+    const charKey = charName.split("char")
+    console.log(charKey[1])
+    const name = charKey[1]
+    console.log(localStorage.getItem(charKey[1]))
+    localStorage.removeItem(charKey[1])
+    window.location.href = '/Final/charList.html'
 }
